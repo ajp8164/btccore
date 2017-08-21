@@ -10,7 +10,7 @@ Infrastructure to build Bitcoin and blockchain-based applications for the next g
 
 ## Attribution
 
-This repository was created by copy forking [bitcore 65d4166] (https://github.com/owstack/bitcore/commit/65d41663d74cb5721b7e22ff9895854e0ded7e52).
+This repository was created by copy forking [bitcore 65d4166](https://github.com/owstack/bitcore/commit/65d41663d74cb5721b7e22ff9895854e0ded7e52).
 
 ## Getting Started
 
