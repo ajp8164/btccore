@@ -2,7 +2,7 @@
   "name": "btccore",
   "version": "5.0.0-beta.1",
   "description": "A platform to build bitcoin and blockchain-based applications.",
-  "author": "BitPay <dev@bitpay.com>",
+  "author": "Open Wallet Stack",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha test/** --recursive",
@@ -30,13 +30,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitpay/btccore.git"
+    "url": "https://github.com/owstack/btccore.git"
   },
   "dependencies": {
-    "btccore-lib": "5.0.0-beta.1",
-    "btccore-node": "5.0.0-beta.2",
-    "insight-api": "5.0.0-beta.1",
-    "insight-ui": "5.0.0-beta.1"
+    "btccore-lib": "https://github.com/owstack/btccore-lib.git",
+    "btccore-node": "https://github.com/owstack/btccore-node.git",
+    "explorer-api": "https://github.com/owstack/btccore-explorer-api.git",
+    "explorer-ui": "https://github.com/owstack/ows-explorer.git"
   },
   "license": "MIT",
   "devDependencies": {

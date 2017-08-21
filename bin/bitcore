@@ -3,5 +3,5 @@
 var btccore = require('btccore-node/lib/cli/btccore');
 var path = require('path');
 var servicesPath = path.resolve(__dirname, '../');
-var additionalServices = ['insight-api', 'insight-ui'];
+var additionalServices = ['explorer-api', 'explorer-ui'];
 btccore(servicesPath, additionalServices);
