@@ -1,0 +1,46 @@
+{
+  "name": "btccore",
+  "version": "5.0.0-beta.1",
+  "description": "A platform to build bitcoin and blockchain-based applications.",
+  "author": "BitPay <dev@bitpay.com>",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test/** --recursive",
+    "build-deb": "./scripts/build-deb"
+  },
+  "bin": {
+    "btccore": "./bin/btccore",
+    "btccored": "./bin/btccored"
+  },
+  "keywords": [
+    "bitcoin",
+    "transaction",
+    "address",
+    "p2p",
+    "ecies",
+    "cryptocurrency",
+    "blockchain",
+    "payment",
+    "bip21",
+    "bip32",
+    "bip37",
+    "bip69",
+    "bip70",
+    "multisig"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitpay/btccore.git"
+  },
+  "dependencies": {
+    "btccore-lib": "5.0.0-beta.1",
+    "btccore-node": "5.0.0-beta.2",
+    "insight-api": "5.0.0-beta.1",
+    "insight-ui": "5.0.0-beta.1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3"
+  }
+}

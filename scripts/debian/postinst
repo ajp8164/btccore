@@ -1,0 +1,37 @@
+#!/bin/bash
+set -e
+set -o pipefail
+
+# add group
+if ! getent group | grep -q "^btccore:" ; then
+    echo "Creating system group: btccore"
+    groupadd --system btccore
+fi
+
+# add user
+if ! getent passwd | grep -q "^btccore:"; then
+    echo "Creating btccore system user"
+    useradd --gid "btccore" --system -m btccore
+fi
+
+# build nodejs addons
+cd "/usr/opt/btccore"
+SKIP_BITCOIN_DOWNLOAD=1 npm rebuild
+
+# setup data directory
+mkdir -p "/home/btccore/.btccore/data"
+chown -R btccore:btccore "/home/btccore/.btccore"
+
+# start btccore
+if hash service 2> /dev/null; then
+    service btccore start || echo "btccore could not be registered or started"
+elif hash start 2> /dev/null; then
+    start btccore || echo "btccore could not be registered or started"
+elif hash systemctl 2> /dev/null; then
+    {
+        systemctl enable "btccore.service" && \
+            systemctl start "btccore.service"
+    } || echo "btccore could not be registered or started"
+else
+    echo 'Your system does not appear to use upstart or systemd, so btccore could not be started'
+fi

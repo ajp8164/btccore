@@ -1,0 +1,20 @@
+[Unit]
+Description={{ deb_package_description }}
+Requires=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/usr/opt/btccore
+ExecStart=/usr/opt/btccore/bin/btccored
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=15
+User=btccore
+ExecStartPre=/bin/mkdir -p /run/btccore
+ExecStartPre=/bin/chown btccore:btccore /run/btccore
+ExecStartPre=/bin/chmod 755 /run/btccore
+PermissionsStartOnly=true
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target
