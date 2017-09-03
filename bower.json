@@ -2,7 +2,7 @@
   "name": "btccore",
   "main": "./btccore.min.js",
   "version": "0.0.1",
-  "homepage": "http://openwalletstack.com",
+  "homepage": "https://github.com/owstack/btccore",
   "description": "A platform to build bitcoin and blockchain-based applications.",
   "moduleType": [
     "globals"
